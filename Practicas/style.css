@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    color: white;
+ background-color: darkblue;
+    width: 100%;
+    height: 50px;
+}
+
+.footer {
+    background-color: beige;
+    width: 100%;
+    height: 60px;
+    float: left;
+  
+}
+
+.main {
+    background-color: aliceblue;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.menu {
+    color: white;
+    background-color: black;
+    width: 25%;
+    float: left;
+    height: 300px;
+}
+
+.dashboard {
+    color: white;
+    background-color: maroon;
+    width: 50%;
+    float: left;
+    height: 300px;
+}
+
+.rss {
+    color: white;
+   background-color: darkslategrey;
+    width: 25%;
+    float: left;
+    height: 300px;
+}
+
+.general {
+    position: absolute;
+    width: auto;
+}
+
+img {
+    width: 700px;
+    height: 400px;
+    background-color: aqua;
+}
+
+.ImagenJonhWick{
+    width: 50%;
+    height: 200px;
+
+}
