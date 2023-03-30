@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    color: white;
+    background-color:#0a2946;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    float: left;
+    align-items: center;
+    color: white;
+
+}
+
+.main {
+    background-color: aliceblue;
+    width: 100%;
+    height: 85%;
+    text-align: center;
+}
+
+.menu {
+    background-color: white;
+    width: 25%;
+    float: left;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    background-color: white;
+    width: 50%;
+    float: left;
+    height: 100%;
+    
+}
+.rss {
+    background-color: white;
+    width: 25%;
+    float: left;
+    height: 100%;
+    
+}
+.general {
+    position: absolute;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.ImagenJonhWick{
+    width: 100%;
+    height: 350px;
+    margin-top: 50px;
+
+}
+.footerIzquierdo{
+    width: 25%;
+    height: 60px;
+    float: left;        
+    text-align: left;
+}
+.footerCentro{
+    width: 50%;
+    float: left;
+    height: 60px;
+    text-align: center;
+}
+.footerDerecha{
+    width: 25%;
+    float: left;
+    height: 60px;
+    text-align: center;
+}
+
+.RedesIconos{
+    width: 18%;
+    height: 40px;
+    float: center;
+    justify-content: space-between;
+}
