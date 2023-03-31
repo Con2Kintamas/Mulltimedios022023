@@ -11,9 +11,10 @@
 }
 
 .footer {
-    background-color: beige;
+    color: white;
+    background-color: black;
     width: 100%;
-    height: 60px;
+    height: 8%;
     float: left;
     align-items: center;
 
@@ -22,45 +23,53 @@
 .main {
     background-color: aliceblue;
     width: 100%;
-    height: 300px;
+    height: 100%;
     text-align: center;
 }
 
 .menu {
-    color: white;
-    background-color: black;
+    background-color: white;
     width: 25%;
     float: left;
-    height: 300px;
+    height: 100%;
 }
 
 .dashboard {
-    color: white;
-    background-color: maroon;
+    background-color: white;
     width: 50%;
     float: left;
-    height: 300px;
+    height: 100%;
 }
 
 .rss {
-    color: white;
-   background-color: darkslategrey;
+    background-color: white;
     width: 25%;
     float: left;
-    height: 300px;
+    height: 100%;
+    
 }
 
 .general {
     position: absolute;
     width: auto;
+    height: 100%;
 }
 .ImagenJonhWick{
-    width: 50%;
-    height: 200px;
+    width: 70%;
+    height: 300px;
 
 }
+.ImagenJonhWickLarga{
+    width: 100%;
+    height: 500px;
+ 
+}
+.ImagenJonhWickCorta{
+    width: 80%;
+    height: 200px;
+    margin-top: 40%;
+}
 .footerIzquierdo{
-    background-color: beige;
     width: 25%;
     height: 60px;
     float: left;        
