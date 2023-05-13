@@ -1,85 +1,65 @@
-<!doctype html>
-<html lang="en">
+@model TuProyecto.Models.FormularioViewModel
 
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@using (Html.BeginForm("Guardar", "Formulario", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<div class="accordion" id="accordionFormulario">
+  <div class="card">
+    <div class="card-header" id="headingNombre">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNombre"
+          aria-expanded="true" aria-controls="collapseNombre">
+          Información Personal
+        </button>
+      </h5>
+    </div>
 
-</head>
+    <div id="collapseNombre" class="collapse show" aria-labelledby="headingNombre" data-parent="#accordionFormulario">
+      <div class="card-body">
+        <div class="form-group">
+          @Html.LabelFor(m => m.Nombre)
+          @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+          @Html.ValidationMessageFor(m => m.Nombre)
+        </div>
 
-<body>
-  <header>
-    <!-- place navbar here -->
-  </header>
-  <main>
-    <input type="text" id="myInput" onkeyup="filterOptions()" placeholder="Buscar...">
-        <select id="mySelect">
-            <option value="">Seleccione</option>
-            <option value="1">Opción 1</option>
-            <option value="2">Opción 2</option>
-            <option value="3">Opción 3</option>
-            <option value="4">Opción 4</option>
-            <option value="5">Opción 5</option>
-        </select>
+        <div class="form-group">
+          @Html.LabelFor(m => m.Email)
+          @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+          @Html.ValidationMessageFor(m => m.Email)
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <style>
-#myInput {
-  display: none;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 12px;
+  <div class="card">
+    <div class="card-header" id="headingEdad">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEdad"
+          aria-expanded="false" aria-controls="collapseEdad">
+          Información Adicional
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseEdad" class="collapse" aria-labelledby="headingEdad" data-parent="#accordionFormulario">
+      <div class="card-body">
+        <div class="form-group">
+          @Html.LabelFor(m => m.Edad)
+          @Html.TextBoxFor(m => m.Edad, new { @class = "form-control" })
+          @Html.ValidationMessageFor(m => m.Edad)
+        </div>
+
+        <div class="form-group">
+          @Html.LabelFor(m => m.Ocupacion)
+          @Html.DropDownListFor(m => m.Ocupacion, new SelectList(Model.Ocupaciones, "Id", "Nombre"), "Seleccione una
+          ocupación", new { @class = "form-control" })
+          @Html.ValidationMessageFor(m => m.Ocupacion)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Guardar</button>
 }
-        </style>
-
-<script>
-    function filterOptions() {
-            // Obtener el campo de entrada y la lista desplegable
-            var input = document.getElementById("myInput");
-            var select = document.getElementById("mySelect");
-
-            // Obtener el valor del campo de entrada y convertirlo a minúsculas
-            var filter = input.value.toLowerCase();
-
-            // Obtener todas las opciones de la lista desplegable
-            var options = select.getElementsByTagName("option");
-
-            // Recorrer todas las opciones y mostrar solo las que coinciden con el valor del filtro
-            for (var i = 0; i < options.length; i++) {
-                var text = options[i].text.toLowerCase();
-                if (text.indexOf(filter) > -1) {
-                    options[i].style.display = "";
-                } else {
-                    options[i].style.display = "none";
-                }
-            }
-        }
-
-        // Mostrar el campo de entrada cuando el usuario hace clic en la lista desplegable
-        document.getElementById("mySelect").addEventListener("click", function () {
-            document.getElementById("myInput").style.display = "block";
-        });
-
-</script>
-  </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
