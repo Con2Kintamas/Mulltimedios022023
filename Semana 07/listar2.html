@@ -118,38 +118,40 @@
     const myModal = new bootstrap.Modal(document.getElementById('modalId'));
     var formulario = document.getElementById('formulario');
 
-    formulario.addEventListener('submit',function(e) {
-        alert('salvando');
+    formulario.addEventListener('submit', function(e) {
         e.preventDefault();
+      alert('salvando');
+       var id = document.getElementById('id').value;
+       var nombre = document.getElementById('nombre').value;
+       var descripcion = document.getElementById('descripcion').value;
+       var tiempo = document.getElementById('tiempo').value;
 
-        var id = document.getElementById('id').value;
-        var nombre = document.getElementById('nombre').value;
-        var descripcion = document.getElementById('descripcion').value;
-        var tiempo = document.getElementById('tiempo').value;
+
+//       //  apis/ActualizarCursos.php
+// // { "id":3, "nombre":"React 22",
+//  "descripcion":"React Junior", 
+//  "tiempo":"10 Meses",
 
         var datosenviar = {
-          id: id,
-          nombre: nombre,
-          descripcion: descripcion,
-          tiempo: tiempo,
-          usuario: 'profesor Mario' 
-         }
-
-         fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
+            id: id,
+            nombre:nombre,
+            descripcion:descripcion,
+            tiempo:tiempo,
+            usuario:'profesor Mario' 
+        }
+        // console.log(datosenviar);
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarCursos.php",
         {
-             method:"POST",
-             body:JSON.stringify(datosenviar)
-         })
-         .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {
-        window.location = 'listar.html'  
-        console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
+            method:"POST",
+            body:JSON.stringify(datosenviar)
+        })//url de peticion de datos
+        .then(respuesta => respuesta.json())//recibe los datos en formato json
+        .then((datosrepuesta) => {    
+            window.location = 'listar.html'        
+             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
         })
-        .catch(console.log)
+        .catch(console.log)//muestra errores
     });
-
-  
-
 
     //[{"id":"377","nombre":"hola leo","descripcion":"sdsd","tiempo":"asasa"},
     function cargarDatos(){
@@ -162,7 +164,6 @@
        })
        .catch(console.log)//muestra errores
     }
-
 
     function steTabla(datos){
         console.log('dato.........s', datos);
@@ -187,7 +188,6 @@
         }
     }
 
-
     function editar(id, nombre, descripcion, tiempo){
       myModal.show();
       document.getElementById('nombre').value = nombre;
@@ -200,22 +200,24 @@
     
     function eliminar(id){
       alert('eliminar'+id);
-//       apis/BorrarCursos.php
-// { "id":2 }
-var datosenviar = {
-            id:id
+    var datosenviar = {
+            id: id
         }
-   fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarCursos.php",
+        // console.log(datosenviar);
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarCursos.php",
         {
             method:"POST",
             body:JSON.stringify(datosenviar)
         })//url de peticion de datos
         .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {            
-             
-             window.location = 'listar.html'//Muestra el resultado de la peticion
+        .then((datosrepuesta) => {    
+            alert(datosrepuesta.data)     
+             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
         })
         .catch(console.log)//muestra errores
+
+
+
   }
 
     cargarDatos();
