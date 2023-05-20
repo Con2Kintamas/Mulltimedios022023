@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Bienvenido</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="" alt="">
+            </span>
+
+            <div class="text logo-text">
+                <span class="name"></span>
+                <span class="profession">Sistema</span>
+            </div>
+        </div>
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="menu.html">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Inicio</span>
+                    </a>
+                </li>
+            
+                <li class="nav-link">
+                    <a href="estudiantes.html">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">Estudiantes</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="curso.html">
+                        <i class='bx bx-book icon'></i>
+                        <span class="text nav-text">Curso</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="grupo.html">
+                        <i class='bx bx-group icon'></i>
+                        <span class="text nav-text">Grupo</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="profesores.html">
+                    <i class='bx bx-pencil icon'></i>
+                        <span class="text nav-text">Profesores</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<section class="main">
+    <div class="text">Bienvenido</div>
+</section>
+
+<script src="script.js"></script>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script>
+    const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle");
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+  </script>
+</body>
+
+</html>
